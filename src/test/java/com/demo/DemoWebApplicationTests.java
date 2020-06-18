@@ -21,7 +21,8 @@ class DemoWebApplicationTests {
 	@Test
 	void crearUsuarioTest() {
 		Usuario user = new Usuario();
-		user.setNombre("admin");
+		
+		user.setNombre("admin"+Math.random()*9);
 		user.setClave(encoder.encode("12345"));//Se codifica la cadena para que no sea legible a simple vista
 		Usuario userReturn = usuarioRepo.save(user);
 		
